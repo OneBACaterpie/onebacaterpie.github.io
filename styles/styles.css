@@ -1,16 +1,16 @@
 :root {
-  --caterpieGreen: #86C776
-  --caterpieOrange: #F47C55
-  --caterpieYellow: #FCE496
-  --caterpieShadowOrange: #74A364
-  --caterpieShadowGreen: #BB6346
-  --caterpieShadowYellow: #B6A676
-  --caterpieLightGreen: #C2E1BA
-  --caterpieLightOrange: #F8A68C
-  --caterpieLightYellow: #FDEFBB
-  --caterpieBlack: #161717
-  --caterpieDarkGray: #444647
-  --caterpieLightGray: #727475
+  --caterpieGreen: #86C776;
+  --caterpieOrange: #F47C55;
+  --caterpieYellow: #FCE496;
+  --caterpieShadowOrange: #74A364;
+  --caterpieShadowGreen: #BB6346;
+  --caterpieShadowYellow: #B6A676;
+  --caterpieLightGreen: #C2E1BA;
+  --caterpieLightOrange: #F8A68C;
+  --caterpieLightYellow: #FDEFBB;
+  --caterpieBlack: #161717;
+  --caterpieDarkGray: #444647;
+  --caterpieLightGray: #727475;
 }
 
 body {
