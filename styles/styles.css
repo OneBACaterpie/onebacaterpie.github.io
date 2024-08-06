@@ -23,7 +23,20 @@ body {
 }
 
 #mainNavDiv {
-  background-color: --caterpieOrange;
+  width: 100%;
+  background-color: --caterpieGreen;
   text-transform: uppercase;
   text-color: --caterpieBlack;
 }
+
+a.mainNavItem {
+  display: inline-block;
+  width: auto;
+  padding: 5px 15px 5px 15px;
+  
+}
+
+a.mainNavItem:hover {
+  background-color: --caterpieShadowGreen;
+}
+  
