@@ -2,8 +2,8 @@
   --caterpieGreen: #86C776;
   --caterpieOrange: #F47C55;
   --caterpieYellow: #FCE496;
-  --caterpieShadowOrange: #74A364;
-  --caterpieShadowGreen: #BB6346;
+  --caterpieShadowGreen: #74A364;
+  --caterpieShadowOrange: #BB6346;
   --caterpieShadowYellow: #B6A676;
   --caterpieLightGreen: #C2E1BA;
   --caterpieLightOrange: #F8A68C;
@@ -30,15 +30,16 @@ body {
   overflow: auto;
 }
 
-li.mainNavItem {
+a.li.mainNavItem {
   display: inline-block;
   width: auto;
   padding: 5px 15px 5px 15px;
   list-style-type: none;
   float: left;
+  overflow: auto;
 }
 
-li.mainNavItem:hover {
+a.li.mainNavItem:hover {
   background-color: var(--caterpieShadowGreen);
 }
   
