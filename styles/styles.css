@@ -24,7 +24,7 @@ body {
 
 #mainNavDiv {
   width: 100%;
-  background-color: --caterpieGreen;
+  background: --caterpieGreen;
   text-transform: uppercase;
   text-color: --caterpieBlack;
   overflow: auto;
