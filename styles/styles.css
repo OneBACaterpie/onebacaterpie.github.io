@@ -24,9 +24,9 @@ body {
 
 #mainNavDiv {
   width: 100%;
-  background: --caterpieGreen;
+  background-color: var(--caterpieGreen);
   text-transform: uppercase;
-  text-color: --caterpieBlack;
+  text-color: var(--caterpieBlack);
   overflow: auto;
 }
 
@@ -39,6 +39,6 @@ li.mainNavItem {
 }
 
 li.mainNavItem:hover {
-  background-color: --caterpieShadowGreen;
+  background-color: var(--caterpieShadowGreen);
 }
   
