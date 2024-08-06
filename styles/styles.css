@@ -27,13 +27,15 @@ body {
   background-color: --caterpieGreen;
   text-transform: uppercase;
   text-color: --caterpieBlack;
+  overflow: auto;
 }
 
 a.mainNavItem {
   display: inline-block;
   width: auto;
   padding: 5px 15px 5px 15px;
-  
+  list-style-type: none;
+  float: left;
 }
 
 a.mainNavItem:hover {
