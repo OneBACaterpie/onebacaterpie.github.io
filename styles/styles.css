@@ -43,7 +43,7 @@ li.mainNavItem {
   list-style-type: none;
   float: left;
   overflow: auto;
-  text-color: black;
+  color: var(--caterpieBlack);
   font-weight: bold;
   text-decoration: none;
 }
@@ -53,6 +53,7 @@ li.mainNavItem:hover {
 }
 
 a.li.mainNavItem {
-  text-color: var(--caterpieBlack);
+  appearance: none;
+  color: var(--caterpieBlack);
   text-decoration: none;
 }
