@@ -26,8 +26,14 @@ body {
   width: 100%;
   background-color: var(--caterpieGreen);
   text-transform: uppercase;
-  text-color: var(--caterpieBlack);
   overflow: auto;
+}
+
+ul#mainNavMenu {
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  display: block;
 }
 
 li.mainNavItem {
@@ -37,6 +43,9 @@ li.mainNavItem {
   list-style-type: none;
   float: left;
   overflow: auto;
+  text-color: var(--caterpieBlack);
+  font-weight: bold;
+  text-decoration: none;
 }
 
 li.mainNavItem:hover {
