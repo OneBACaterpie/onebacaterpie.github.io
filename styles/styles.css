@@ -51,4 +51,8 @@ li.mainNavItem {
 li.mainNavItem:hover {
   background-color: var(--caterpieShadowGreen);
 }
-  
+
+a.li.mainNavItem {
+  text-color: var(--caterpieBlack);
+  text-decoration: none;
+}
