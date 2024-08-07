@@ -53,7 +53,7 @@ li.mainNavItem:hover {
 }
 
 a.li.mainNavItem {
-  appearance: none;
+  -webkit-appearance: none;
   color: var(--caterpieBlack);
   text-decoration: none;
 }
