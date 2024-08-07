@@ -43,7 +43,7 @@ li.mainNavItem {
   list-style-type: none;
   float: left;
   overflow: auto;
-  text-color: var(--caterpieBlack);
+  text-color: black;
   font-weight: bold;
   text-decoration: none;
 }
