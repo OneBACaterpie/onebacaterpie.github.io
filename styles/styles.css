@@ -30,7 +30,7 @@ body {
   overflow: auto;
 }
 
-a.li.mainNavItem {
+li.mainNavItem {
   display: inline-block;
   width: auto;
   padding: 5px 15px 5px 15px;
@@ -39,7 +39,7 @@ a.li.mainNavItem {
   overflow: auto;
 }
 
-a.li.mainNavItem:hover {
+li.mainNavItem:hover {
   background-color: var(--caterpieShadowGreen);
 }
   
