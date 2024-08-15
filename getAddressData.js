@@ -34,7 +34,7 @@ async function getData(){
 		console.log(grantees[i].repName);
 
 		// Get Sen data
-		const senResponse = await fetch(getSen);
+		const senResponse = await fetch(getGeocode);
 		const senData = await senResponse.json();
 		const senObj = await JSON.parse(senData);
 		console.log(senObj);
