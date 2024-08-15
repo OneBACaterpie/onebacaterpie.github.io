@@ -20,25 +20,30 @@ async function getData(){
 		const zip = grantees[i].zipcode;
 		const getRep = "https://www.house.mi.gov/FindARepresentative?address=".concat(address,"&city=",city,"&zipcode=",zip);
 		const getSen = "https://www.senate.michigan.gov/findyoursenator/results?Address=".concat(address,"&City=",city,"&Zip=",zip);
-		const getGeocode = "https://www.mcgi.state.mi.us/ws_csstp/gis_services.svc/rest/geocodeAddress/?a=".concat(address," "
+		const getGeocode = "https://www.mcgi.state.mi.us/ws_csstp/gis_services.svc/rest/geocodeAddress/?a=".concat(address," ",city," ",zip,"&ma=false&tk=%7bTOKEN%7d");
 		
 		// Get Rep data
 		const repResponse = await fetch(getRep);
 		const repData = await repResponse.json();
 		const repObj = await JSON.parse(repData);
-		// Set Rep Name
+		// Set repName
 		grantees[i].repName = repObj.printName;
 		console.log(grantees[i].repName);
-		
+
+		// Get Sen data
 		const senResponse = await fetch(getSen);
 		const senData = await senResponse.json();
 		const senObj = await JSON.parse(senData);
 		console.log(senObj);
-	  // Set Sen Name
-		grantees[i].SenName = senObj.printName;
-		console.log(grantees[i].SenName;
+	  	// Set senName
+		grantees[i].senName = senObj.printName;
+		console.log(grantees[i].senName;
 
-    // Print Leg Names to table
+		// Display output
+		const newP = document.createElement("p");
+		p.textContent = grantees[i].name.concat(": ", grantees[i].repName
+
+    		// Print Leg Names to table
 		//const table = document.getElementById("Legislators");
 		//const newRow = table.insertRow(i+1);
 		//const colName = newRow.insertCell(0);
