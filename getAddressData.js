@@ -37,7 +37,7 @@ async function getData(){
 		console.log(senObj);
 	  	// Set senName
 		grantees[i].senName = senObj.printName;
-		console.log(grantees[i].senName;
+		console.log(grantees[i].senName);
 
 		// Display output
 		const newP = document.createElement("p");
