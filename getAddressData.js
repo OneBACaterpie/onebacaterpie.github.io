@@ -41,7 +41,7 @@ async function getData(){
 
 		// Display output
 		const newP = document.createElement("p");
-		p.textContent = grantees[i].name.concat(": ", grantees[i].repName
+		p.textContent = grantees[i].name.concat(": ", grantees[i].repName,", ", grantees[i].senName);
 
     		// Print Leg Names to table
 		//const table = document.getElementById("Legislators");
