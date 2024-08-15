@@ -9,6 +9,9 @@ grantees[3] = {name:"Bronner's Christmas Wonderland", address:"25 Christmas Ln",
 
 console.log(grantees.length); //4
 
+// Add an event listener
+document.getElementById("fetchRequest").addEventListener("click", getData);
+
 async function getData(){
 	const displayStatus = document.getElementById("fetchStatus");
 	const displayOutput = document.getElementById("fetchOutput");
