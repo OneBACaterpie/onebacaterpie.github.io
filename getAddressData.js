@@ -22,8 +22,8 @@ async function getData(){
 		const city = grantees[i].city;
 		const zip = grantees[i].zipcode;
 		const getRep = "https://www.house.mi.gov/FindARepresentative?address=".concat(address,"&city=",city,"&zipcode=",zip);
-		const getSen = "https://www.senate.michigan.gov/findyoursenator/results?Address=".concat(address,"&City=",city,"&Zip=",zip);
-		const getGeocode = "https://www.mcgi.state.mi.us/ws_csstp/gis_services.svc/rest/geocodeAddress/?a=".concat(address," ",city," ",zip,"&ma=false&tk=%7bTOKEN%7d");
+		// const getSen = "https://www.senate.michigan.gov/findyoursenator/results?Address=".concat(address,"&City=",city,"&Zip=",zip);
+		// const getGeocode = "https://www.mcgi.state.mi.us/ws_csstp/gis_services.svc/rest/geocodeAddress/?a=".concat(address," ",city," ",zip,"&ma=false&tk=%7bTOKEN%7d");
 		
 		// Get Rep data
 		const repResponse = await fetch(getRep);
@@ -33,19 +33,20 @@ async function getData(){
 		grantees[i].repName = repObj.printName;
 		console.log(grantees[i].repName);
 
-		// Get Sen data
-		const senResponse = await fetch(getGeocode);
-		const senData = await senResponse.json();
-		const senObj = await JSON.parse(senData);
-		console.log(senObj);
+		// Get Sen data - not working; request blocked
+		// const senResponse = await fetch(getGeocode);
+		// const senData = await senResponse.json();
+		// const senObj = await JSON.parse(senData);
+		// console.log(senObj);
 	  	// Set senName
-		grantees[i].senName = senObj.printName;
-		console.log(grantees[i].senName);
+		// grantees[i].senName = senObj.printName;
+		// console.log(grantees[i].senName);
 
 		// Display output
 		const newP = document.createElement("p");
-		p.textContent = grantees[i].name.concat(": ", grantees[i].repName,", ", grantees[i].senName);
-
+		// p.textContent = grantees[i].name.concat(": ", grantees[i].repName,", ", grantees[i].senName);
+		p.textContent = grantees[i].name.concat(": ", grantees[i].repName);
+		
     		// Print Leg Names to table
 		//const table = document.getElementById("Legislators");
 		//const newRow = table.insertRow(i+1);
