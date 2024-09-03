@@ -12,4 +12,4 @@ function loadGame(userChoice) {
 gameButtons.forEach(gameButtons => gameButtons.addEventListener("click", (e) => {
   userChoice = e.target.id;
   loadGame(userChoice);
-});
+}));
