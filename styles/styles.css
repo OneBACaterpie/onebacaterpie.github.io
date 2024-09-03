@@ -23,6 +23,7 @@ body {
 }
 
 #mainNavDiv {
+  -webkit-appearance: none;
   width: 100%;
   background-color: var(--caterpieGreen);
   text-transform: uppercase;
@@ -50,6 +51,16 @@ a.li.mainNavItem {
   text-decoration: none;
 }
 
-li.mainNavItem:hover {
+a.li.mainNavItem:hover {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: auto;
+  padding: 5px 15px 5px 15px;
+  list-style-type: none;
+  float: left;
+  overflow: auto;
+  color: var(--caterpieBlack);
+  font-weight: bold;
+  text-decoration: none;
   background-color: var(--caterpieShadowGreen);
 }
