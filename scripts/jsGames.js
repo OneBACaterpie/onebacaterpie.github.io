@@ -2,7 +2,7 @@ const gameButtons = document.getElementById("gameSelectMenu").getElementsByClass
 const games = Array.from(gameButtons);
 console.log(games);
 let userChoice;
-const scriptsPath = "https://https://onebacaterpie.github.io/scripts/";
+const scriptsPath = "https://onebacaterpie.github.io/scripts/";
 
 function loadGame(userChoice) {
   var script = document.createElement("script");
