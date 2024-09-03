@@ -46,7 +46,7 @@ scissorsButton.setAttribute("id", "scissors");
 rpsElements.push(rockButton, paperButton, scissorsButton);
 
 // Add elements to Game Container
-for (let i = 0; i < rpsElements.length(); i++) {
+for (let i = 0; i < rpsElements.length; i++) {
   gameContainer.appendChild(rpsElements[i]);
 }
 
