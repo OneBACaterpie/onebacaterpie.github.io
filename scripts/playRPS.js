@@ -34,8 +34,8 @@ rockButton.setAttribute("id", "rock");
 
 // Paper button
 const paperButton = document.createElement("button");
-rockButton.setAttribute("value", "Paper");
-rockButton.setAttribute("id", "paper");
+paperButton.setAttribute("value", "Paper");
+paperButton.setAttribute("id", "paper");
 
 // Scissors button
 const scissorsButton = document.createElement("button");
