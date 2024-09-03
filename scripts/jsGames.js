@@ -1,5 +1,6 @@
 const gameButtons = document.getElementById("gameSelectMenu").getElementsByClassName("gameSelectButton");
-console.log(gameButtons);
+const games = Array.from(gameButtons);
+console.log(games);
 let userChoice;
 const scriptsPath = "https://https://onebacaterpie.github.io/scripts/";
 
@@ -9,7 +10,7 @@ function loadGame(userChoice) {
   document.head.appendChild(script);
 }
 
-gameButtons.forEach(gameButtons => gameButtons.addEventListener("click", (e) => {
+games.forEach(games => games.addEventListener("click", (e) => {
   userChoice = e.target.id;
   loadGame(userChoice);
 }));
