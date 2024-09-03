@@ -6,7 +6,7 @@ const scriptsPath = "https://https://onebacaterpie.github.io/scripts/";
 
 function loadGame(userChoice) {
   var script = document.createElement("script");
-  script.src = URL(userChoice.concat(".js"), scriptsPath);
+  script.src = new URL(userChoice.concat(".js"), scriptsPath);
   document.head.appendChild(script);
 }
 
