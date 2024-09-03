@@ -37,6 +37,7 @@ ul#mainNavMenu {
 }
 
 a.li.mainNavItem {
+  -webkit-appearance: none;
   display: inline-block;
   width: auto;
   padding: 5px 15px 5px 15px;
@@ -50,10 +51,4 @@ a.li.mainNavItem {
 
 li.mainNavItem:hover {
   background-color: var(--caterpieShadowGreen);
-}
-
-a.li.mainNavItem {
-  -webkit-appearance: none;
-  color: var(--caterpieBlack);
-  text-decoration: none;
 }
