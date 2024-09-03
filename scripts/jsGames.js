@@ -1,4 +1,4 @@
-const gameButtons = document.getElementById("gameSelectMenu").ElementsByClassName("gameSelectButton");
+const gameButtons = document.getElementById("gameSelectMenu").getElementsByClassName("gameSelectButton");
 console.log(gameButtons);
 let userChoice;
 const scriptsPath = "https://https://onebacaterpie.github.io/scripts/";
