@@ -1,7 +1,5 @@
 // Sources: "Learn JavaScript by Building 7 Games": https://www.youtube.com/watch?v=ec8vSKJuZTk and https://github.com/kubowania
 
-const gameContainer = document.getElementById("gameContainer");
-
 // Clear Game Container
 gameContainer.replaceChildren();
 
