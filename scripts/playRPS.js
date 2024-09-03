@@ -31,17 +31,17 @@ rpsElements.push(resultHeader, displayResult);
 
 // Rock button
 const rockButton = document.createElement("button");
-rockButton.textContent("Rock");
+rockButton.value("Rock");
 rockButton.setAttribute("id", "rock");
 
 // Paper button
 const paperButton = document.createElement("button");
-rockButton.textContent("Paper");
+rockButton.value("Paper");
 rockButton.setAttribute("id", "paper");
 
 // Scissors button
 const scissorsButton = document.createElement("button");
-scissorsButton.textContent("Scissors");
+scissorsButton.value("Scissors");
 scissorsButton.setAttribute("id", "scissors");
 
 // Push buttons to rpsElements array
