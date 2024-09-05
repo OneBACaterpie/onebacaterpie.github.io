@@ -8,7 +8,7 @@ grantees[2] = {name:"Van Andel Arena", address:"130 Fulton St W", city:"Grand Ra
 grantees[3] = {name:"Bronner's Christmas Wonderland", address:"25 Christmas Ln", city:"Frankenmuth", zipcode:"48754"};
 
 // Add event listener to the button
-document.getElementById("getData").addEventListener("click", getData);
+document.getElementById("fetchRequest").addEventListener("click", getData);
 
 // Function called when the button is clicked
 async function getData(){
