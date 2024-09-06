@@ -13,54 +13,46 @@
   --caterpieLightGray: #727475;
 }
 
+/* Set CSS baseline */
 body {
-  font-family: Helvetica;
+	font-family: Helvetica;
 }
+
+a, a:link, a:visited, a:focus, a:hover, a:active {
+	text-decoration: none;
+}
+/* End CSS baseline */
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
 }
-
+/* New */
 #mainNavDiv {
-  -webkit-appearance: none;
-  width: 100%;
-  background-color: var(--caterpieGreen);
-  text-transform: uppercase;
-  overflow: auto;
+	display: block;
+	width: 100%;
+	margin: 0;
+	background-color: black;
+	text-transform: uppercase;
+	overflow: auto;
 }
 
 ul#mainNavMenu {
-  -webkit-appearance: none;
-  margin: 0;
-  height: 100%;
-  list-style: none;
-  display: block;
+	height: 100%;
+	margin: 0;
 }
 
-a.li.mainNavItem {
-  -webkit-appearance: none;
-  display: inline-block;
-  width: auto;
-  padding: 5px 15px 5px 15px;
-  list-style-type: none;
-  float: left;
-  overflow: auto;
-  color: var(--caterpieBlack);
-  font-weight: bold;
-  text-decoration: none;
+ul#mainNavMenu a {
+	display: inline-block;
+	float: left;
+	height: 100%;
+	margin: 0;
+	padding: 10px 15px 10px 15px;
+	width: auto;
+	text-decoration: none;
+	color: white;
 }
 
-a.li.mainNavItem:hover {
-  -webkit-appearance: none;
-  display: inline-block;
-  width: auto;
-  padding: 5px 15px 5px 15px;
-  list-style-type: none;
-  float: left;
-  overflow: auto;
-  color: var(--caterpieBlack);
-  font-weight: bold;
-  text-decoration: none;
-  background-color: var(--caterpieShadowGreen);
+ul#mainNavMenu a:hover {
+	background-color: darkslategray;
 }
