@@ -2,8 +2,6 @@
 
 const displayStatus = document.getElementById("fetchStatus");
 const displayResult = document.getElementById("fetchResult");
-const fetchHouse = []; // Empty array to hold JSONP callback result
-const fetchSenate = []; // Empty array to hold JSONP callback result
 let myTimeout;
 
 const addressData = [];
@@ -29,7 +27,15 @@ function dataFetch(data){
 function displayData() {
 	
   for (let i = 0; i < addressData.length; i++) {
-		console.log(addressData[i]);
+	  	// console.log(addressData[i].repName, addressData[i].senName); // for testing purposes
+		const table = document.getElementById("fetchResult");
+		const newRow = table.insertRow(i+1);
+		const colAddress = newRow.insertCell(0);
+		const colRep = newRow.insertCell(1);
+		const colSen = newRow.insertCell(2);
+		colAddress.textContent = addressData[i].address;
+		colRep.textContent = addressData[i].repName;
+		colSen.textContent = addressData[i].senName;
 	}
 }
 
