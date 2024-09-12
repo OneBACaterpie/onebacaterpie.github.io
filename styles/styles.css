@@ -1,4 +1,4 @@
-:root {
+:root { /* Custom colors */
   --caterpieGreen: #86C776;
   --caterpieOrange: #F47C55;
   --caterpieYellow: #FCE496;
@@ -27,7 +27,8 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
   display: flex;
   flex-wrap: wrap;
 }
-/* New */
+
+/* Start nav menu formatting */
 #mainNavDiv {
 	display: block;
 	width: 100%;
@@ -56,3 +57,27 @@ ul#mainNavMenu a {
 ul#mainNavMenu a:hover {
 	background-color: darkslategray;
 }
+/* End nav menu formatting */
+
+/* Table formatting */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+th {
+	padding: 12px 6px 12px 6px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+}
+/* End table formatting */
