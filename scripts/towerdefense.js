@@ -18,6 +18,7 @@ window.addEventListener("load", function(){
 	const enemyPositions = []; // Array to hold the positions of all enemies
 	const projectiles = []; // Array to hold all projectiles
 	const resources = []; // Array to hold all resources
+	const floatingMessages = []; // Array to hold floating messages
 	
 	let enemiesInterval = 600;
 	let numberOfResources = 300;
@@ -146,21 +147,6 @@ window.addEventListener("load", function(){
 			
 		}
 	}
-	canvas.addEventListener("click", function(){ // When the canvas is clicked...
-		const gridPositionX = mouse.x - (mouse.x % cellSize) + cellGap; // Get X position
-		const gridPositionY = mouse.y - (mouse.y % cellSize) + cellGap; // Get Y position
-		if (gridPositionY < cellSize) return; // If grid position is less than 100, cancel function
-		for (let i = 0; i < defenders.length; i++){ // Cycle through all active defenders and...
-			if(defenders[i].x === gridPositionX && defenders[i].y === gridPositionY){ // Check if there is a defender in the same position as the mouse
-				return; // If there is already a defender here, cancel the function
-			}
-		}
-		let defenderCost = 100;
-		if(numberOfResources >= defenderCost){ // If we have resources greater than or equal to the resources required to build a defender...
-			defenders.push(new Defender(gridPositionX, gridPositionY)); // Create a new defender and add them to our defender array
-			numberOfResources -= defenderCost; // Subtract the cost of a defender from our resources
-		}
-	});
 	function handleDefenders(){
 		for (let i = 0; i < defenders.length; i++){
 			defenders[i].draw();
@@ -181,6 +167,40 @@ window.addEventListener("load", function(){
 					i--; // Reduce i to make sure next defender doesn't get skipped in the loop
 					enemies[j].movement = enemies[j].speed;
 				}
+			}
+		}
+	}
+	// floating messages
+	class FloatingMessage {
+		constructor(value, x, y, size, color){
+			this.value = value;
+			this.x = x;
+			this.y = y;
+			this.size = size;
+			this.lifeSpan = 0;
+			this.color = color;
+			this.opacity = 1;
+		}
+		update(){
+			this.y -= 0.3;
+			this.lifeSpan += 1;
+			if(this.opacity > 0.01){this.opacity -= 0.01;}
+		}
+		draw(){
+			ctx.globalAlpha = this.opacity;
+			ctx.fillStyle = this.color;
+			ctx.font = this.size + "px Orbitron";
+			ctx.fillText(this.value, this.x, this.y);
+			ctx.globalAlpha = 1;
+		}
+	}
+	function handleFloatingMessages(){
+		for (let i = 0; i < floatingMessages.length; i++){
+			floatingMessages[i].update();
+			floatingMessages[i].draw();
+			if (floatingMessages[i].lifespan >= 50){
+				floatingMessages.splice(i, 1);
+				i--;
 			}
 		}
 	}
@@ -216,6 +236,8 @@ window.addEventListener("load", function(){
 			}
 			if (enemies[i].health <= 0){
 				let gainedResources = enemies[i].maxHealth / 10;
+				floatingMessages.push(new FloatingMessage("+" + gainedResources, enemies[i].x, enemies[i].y, 30,"black"))
+				floatingMessages.push(new FloatingMessage("+" + gainedResources, 250, 50, 30, "gold"));
 				numberOfResources += gainedResources;
 				score += gainedResources;
 				const findThisIndex = enemyPositions.indexOf(enemies[i].y); // This will find the first enemy in that row; will get screwed up if some enemies are faster and move ahead of a previously added enemy
@@ -258,12 +280,13 @@ window.addEventListener("load", function(){
 			resources[i].draw();
 			if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)){
 				numberOfResources += resources[i].amount;
+				floatingMessages.push(new FloatingMessage("+" + resources[i].amount, resources[i].x, resources[i].y, 30,"black"))
+				floatingMessages.push(new FloatingMessage("+" + resources[i].amount, 250, 50, 30, "gold"));
 				resources.splice(i, 1);
 				i--;
 			}
 		}
 	}
-	
 	// utilities
 	function handleGameStatus(){
 		ctx.fillStyle = "gold";
@@ -283,6 +306,24 @@ window.addEventListener("load", function(){
 			ctx.fillText("You win with " + score + " points!", 134, 340);
 		}
 	}
+	canvas.addEventListener("click", function(){ // When the canvas is clicked...
+		const gridPositionX = mouse.x - (mouse.x % cellSize) + cellGap; // Get X position
+		const gridPositionY = mouse.y - (mouse.y % cellSize) + cellGap; // Get Y position
+		if (gridPositionY < cellSize) return; // If grid position is less than 100, cancel function
+		for (let i = 0; i < defenders.length; i++){ // Cycle through all active defenders and...
+			if(defenders[i].x === gridPositionX && defenders[i].y === gridPositionY){ // Check if there is a defender in the same position as the mouse
+				return; // If there is already a defender here, cancel the function
+			}
+		}
+		let defenderCost = 100;
+		if(numberOfResources >= defenderCost){ // If we have resources greater than or equal to the resources required to build a defender...
+			defenders.push(new Defender(gridPositionX, gridPositionY)); // Create a new defender and add them to our defender array
+			numberOfResources -= defenderCost; // Subtract the cost of a defender from our resources
+		}
+		else {
+			floatingMessages.push(new FloatingMessage("Need more resources", mouse.x, mouse.y, 15, "blue"));
+		}
+	});
 	function animate(){
 		// Draw controls bar
 		ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -294,6 +335,7 @@ window.addEventListener("load", function(){
 		handleProjectiles();
 		handleEnemies();
 		handleGameStatus();
+		handleFloatingMessages();
 		frame++;
 		if(!gameOver) requestAnimationFrame(animate);
 	}
