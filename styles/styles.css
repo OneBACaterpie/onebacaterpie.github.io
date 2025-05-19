@@ -12,14 +12,22 @@
   --caterpieDarkGray: #444647;
   --caterpieLightGray: #727475;
 }
-
 /* Set CSS baseline */
 body {
 	font-family: Helvetica;
 }
-
 a, a:link, a:visited, a:focus, a:hover, a:active {
 	text-decoration: none;
+}
+#canvas1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 5px solid black;
+}
+#assets {
+	display: none;
 }
 /* End CSS baseline */
 
@@ -27,7 +35,6 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
   display: flex;
   flex-wrap: wrap;
 }
-
 /* Start nav menu formatting */
 #mainNavDiv {
 	display: block;
@@ -37,12 +44,10 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
 	text-transform: uppercase;
 	overflow: auto;
 }
-
 ul#mainNavMenu {
 	height: 100%;
 	margin: 0;
 }
-
 ul#mainNavMenu a {
 	display: inline-block;
 	float: left;
@@ -53,27 +58,22 @@ ul#mainNavMenu a {
 	text-decoration: none;
 	color: white;
 }
-
 ul#mainNavMenu a:hover {
 	background-color: darkslategray;
 }
 /* End nav menu formatting */
-
 /* Table formatting */
 table {
 	border-collapse: collapse;
 	width: 100%;
 }
-
 td, th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
-
 tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-
 th {
 	padding: 12px 6px 12px 6px;
 	text-align: left;
